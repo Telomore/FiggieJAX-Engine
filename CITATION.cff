@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the standalone FiggieJAX Engine release."
+authors:
+  - name: "FiggieJAX contributors"
+title: "FiggieJAX Engine"
+version: 0.16.1
+date-released: 2026-11-18
+abstract: >-
+  An independent, event-driven Figgie simulator implemented in JAX, with
+  private observations, optional reinforcement-learning framework adapters,
+  examples, and offline replay support.
+license: MIT
+keywords:
+  - Figgie
+  - JAX
+  - multi-agent reinforcement learning
+  - simulation

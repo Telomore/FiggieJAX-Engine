@@ -1,0 +1,64 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "figgie-jax-engine"
+version = "0.16.1"
+description = "Standalone, event-driven Figgie simulator in JAX"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+license = "MIT"
+authors = [{name = "FiggieJAX contributors"}]
+keywords = ["jax", "figgie", "reinforcement-learning", "multi-agent"]
+dependencies = ["jax>=0.12.0.1", "numpy>=2.0", "pydantic>=2.14.1,<3"]
+
+[project.urls]
+Repository = "https://github.com/Telomore/FiggieJAX-Engine"
+Documentation = "https://github.com/Telomore/FiggieJAX-Engine/blob/main/README.md"
+
+[project.optional-dependencies]
+gpu = ["jax[cuda13]>=0.12.0.1; sys_platform == 'linux' and platform_machine == 'x86_64'"]
+gymnasium = ["gymnasium>=1.4,<2"]
+pettingzoo = ["pettingzoo>=1.27,<2"]
+openspiel = ["open-spiel>=2.0.2,<3"]
+all = ["gymnasium>=1.4,<2", "pettingzoo>=1.27,<2", "open-spiel>=2.0.2,<3"]
+
+[dependency-groups]
+dev = ["pytest>=8.3", "ruff>=0.13", "hatchling>=1.27"]
+
+[project.scripts]
+figgie-engine-benchmark = "figgie_jax.benchmark:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/figgie_jax", "src/figgie_jax_adapters"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/src", "/tests", "/docs", "/examples", "/scripts", "/assets",
+  "/.agents", "/.python-version", "/.gitignore", "/.dockerignore",
+  "/pyproject.toml", "/uv.lock", "/README.md", "/AGENTS.md", "/CONTRIBUTING.md",
+  "/CITATION.cff", "/CHANGELOG.md", "/LICENSE", "/NOTICE.md", "/SOURCE.json", "/Dockerfile",
+]
+exclude = ["**/__pycache__", "**/*.py[cod]", "/results", "/dist", "/.venv", "/.git"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.uv]
+cache-keys = [
+  { file = "pyproject.toml" }, { file = "README.md" }, { file = "src/**/*.py" },
+  { file = "LICENSE" }, { file = "NOTICE.md" },
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+extend-exclude = ["results"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = ["Config", "figgie_jax.types.Config"]

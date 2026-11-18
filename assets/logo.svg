@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-labelledby="title desc">
+  <title id="title">FiggieJAX</title>
+  <desc id="desc">Original angular FiggieJAX lettering in white and lavender on a purple table, with four small suit symbols.</desc>
+  <defs>
+    <linearGradient id="table" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#75418a"/>
+      <stop offset="1" stop-color="#383271"/>
+    </linearGradient>
+    <path id="f" d="M10 16 30 4 68 4 55 21 34 21 34 55 58 44 58 64 34 77 34 122 18 136 6 128 16 119 16 89 5 95 5 76 16 69 16 30 6 35Z"/>
+    <path id="i" d="M8 16 24 4 43 16 33 26 33 114 44 125 26 138 8 126 18 116 18 27Z"/>
+    <path id="g" d="M21 7 60 7 74 23 58 38 46 24 30 24 30 109 47 120 55 113 55 82 43 82 43 64 74 64 74 124 52 140 12 127 12 28Z"/>
+    <path id="e" d="M12 22 29 7 69 7 56 24 33 24 33 59 59 48 59 68 33 81 33 115 56 115 71 103 71 123 50 138 12 138 19 123 19 89 6 96 6 76 19 69 19 35 6 42Z"/>
+    <path id="j" d="M10 8 62 8 50 26 50 118 28 140 6 128 6 102 22 91 22 117 31 121 34 114 34 26 21 26Z"/>
+    <path id="a" fill-rule="evenodd" d="M5 126 18 26 37 6 57 26 70 126 55 138 45 123 42 87 26 87 23 123 11 138Z M29 68 40 68 35 34Z"/>
+    <path id="x" d="M3 19 19 7 35 51 51 7 68 19 45 71 70 126 54 139 35 94 16 139 0 126 24 71Z"/>
+  </defs>
+  <rect width="1200" height="340" rx="12" fill="url(#table)"/>
+  <rect x="18" y="18" width="1164" height="304" rx="5" fill="none" stroke="#ffffff" stroke-opacity=".22"/>
+  <g fill="#fff" fill-opacity=".17">
+    <path d="M61 64 70 48 79 64 70 80Z M1139 64 1130 48 1121 64 1130 80Z"/>
+    <path d="M61 276 70 260 79 276 70 292Z M1139 276 1130 260 1121 276 1130 292Z"/>
+  </g>
+  <g transform="translate(168 66) scale(1.22)" fill="#fffdfb">
+    <use href="#f" x="0"/><use href="#i" x="75"/>
+    <use href="#g" x="130"/><use href="#g" x="216"/>
+    <use href="#i" x="302"/><use href="#e" x="357"/>
+    <g fill="#dcd4fb"><use href="#j" x="460"/><use href="#a" x="530"/><use href="#x" x="610"/></g>
+  </g>
+  <g fill="#ede5fa" text-anchor="middle" font-family="Arial, sans-serif">
+    <text x="600" y="273" font-size="16" font-weight="600" letter-spacing="3">JAX · MULTI-AGENT TRADING SIMULATION</text>
+    <text x="600" y="303" font-size="17" letter-spacing="10">♠ ♣ ♦ ♥</text>
+  </g>
+</svg>
