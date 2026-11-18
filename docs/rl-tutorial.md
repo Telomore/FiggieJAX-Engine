@@ -6,8 +6,15 @@ optional Gymnasium, PettingZoo, or OpenSpiel installation. Its round
 collection is a Python host loop; JAX executes the policy math, gradients, and
 compiled event calls. For a fully compiled simulation collector and a custom
 training-loop workflow, see [the README](../README.md#run-the-simulation-loop-fully-in-jax).
-For the separate example that also compiles collection and repeated parameter
-updates, see [compiled learning](compiled-learning.md).
+
+On a GPU, `examples/train_jax.py` runs the learner policy, the heuristic
+opponents, and the environment on the same device. The compiled loop keeps game
+states, observations, actions, and rewards on the GPU. It passes rollout data
+directly to the learner update. This avoids per-event Python calls and transfers
+of intermediate data between the CPU and GPU. Batching independent games lets
+the GPU process several tables in parallel. Larger batches use more GPU memory,
+and training throughput depends on the workload and batch size. See the GPU
+commands and example timings in [compiled learning](compiled-learning.md).
 
 Run a short seeded example:
 
