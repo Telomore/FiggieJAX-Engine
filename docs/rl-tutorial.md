@@ -63,7 +63,7 @@ For a completed round, let $G$ be the learner's terminal chip profit, and let
 $b$ be a running mean baseline. The normalized advantage is:
 
 $$
-A = \operatorname{clip}\left(\frac{G-b}{S}, -5, 5\right).
+A = \max\left(-5, \min\left(5, \frac{G-b}{S}\right)\right).
 $$
 
 Here, $G$ and $b$ are in chips, and the reward scale is $S=100$ chips.
