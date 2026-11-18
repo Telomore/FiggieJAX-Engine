@@ -2,9 +2,10 @@
 
 # FiggieJAX Engine
 
-A standalone, event-driven Figgie simulator for four or five players. Its main
-design goal is to run the learner, opponents, and game environment together on
-one GPU. The compiled JAX loop keeps game state, observations, actions, and
+A standalone, event-driven JAX simulator for four- or five-player Figgie games,
+built to support reinforcement learning (RL) training. Its main design goal is
+to run the learner, opponents, and game environment together on one GPU.
+The compiled JAX loop keeps game state, observations, actions, and
 rewards on the GPU. This avoids per-event Python calls and CPU–GPU transfers of
 intermediate data. Batching independent games lets the GPU process several tables
 in parallel. The [compiled learning example](docs/compiled-learning.md)
